@@ -21,17 +21,12 @@
 			echo 'Un user a bien été inséré';
 
 			//Envoi du mail
-			//require_once(plugin_dir_path(__FILE__)."send_mail.php");
+			require_once(plugin_dir_path(__FILE__)."send_mail.php");
+			wp_mail($to, $subject, $message);
 		}
 
 		else
 		{
 			echo 'Veuillez refaire la démarche svp, une erreur technique est survenue';
 		}
-
-		$to = 'adrien.jourdier@gmail.com';
-		$subject = 'Dernier utilisateur inscrit sur le site';
-		$message = "Test";
-
-		wp_mail($to, $subject, $message);
 	}

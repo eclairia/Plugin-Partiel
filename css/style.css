@@ -1,4 +1,26 @@
-form
+form, h1
 {
-	width: 50px;
+	margin: auto;
+	text-align: center;
+}
+
+label
+{
+	color: black !important;
+	width: 100px;
+}
+
+input
+{
+	width: 200px;
+}
+
+label
+{
+	color: red;
+}
+
+.widget-title
+{
+	text-align: center;
 }

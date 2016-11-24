@@ -1,8 +1,8 @@
 <?php
 
-	function form_subscribe()
+	/*function form_subscribe()
 	{
-		echo "<form action='' method='POST'>";
+		echo "<form action='' method='POST' id='form_subscribe'>";
 
 			echo "<label>Login</label><input type='text' name='login' id='login'>";
 			echo "<label>Mot de passe</label><input type='password' name='mdp' id='mdp'>";
@@ -15,8 +15,6 @@
 		var_dump($_POST);
 	}
 
-	add_action('the_content', 'form_subscribe');
-
 	require_once(plugin_dir_path(__FILE__)."../model/insert_users.php");
 
-	add_action('wp', 'insert_users');
+	add_action('wp', 'insert_users');*/

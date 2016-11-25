@@ -63,8 +63,17 @@ class widget_form_subscribe2 extends WP_widget
 			<input type="submit" value="S'inscrire">
 
 			<?php 
-			require_once(plugin_dir_path(__FILE__)."model/insert_users.php");
-			//add_action("wp", "insert_users");
+
+				if(isset($_POST["login"]) && isset($_POST["mdp"]) && isset($_POST["email"]) && isset($_POST["pseudo"]))
+				{
+					require_once(plugin_dir_path(__FILE__)."model/insert_users.php");
+					//add_action("wp", "insert_users");
+				}
+
+				else
+				{
+					echo "<p>Tous les champs doivent être remplis</p>";
+				}
 			?>	
 
 		</form>

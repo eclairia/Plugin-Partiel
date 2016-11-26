@@ -26,22 +26,24 @@
 	{
 		echo '<p>Un user a bien été inséré</p>';
 
-		//Envoi du mail
 		//require_once(plugin_dir_path(__FILE__)."send_mail.php");
 
+		//Envoi d'un email pour l'admin
 		$to_admin = get_bloginfo("admin_email");
 		$subject_admin = "Dernier utilisateur inscrit";
 		$message_admin = "Le dernier utilisateur inscrit :  Login : ".$login." Mot de passe : Silence is golden "." E-mail : ".$email."  Pseudo : ".$pseudo;
 
 		wp_mail($to_admin, $subject_admin, $message_admin);
 
-		$to = $email;
-		$subject = 'Confirmation de votre inscription';
-		$message = "Merci de vous être inscrit." . "Rappel de vos informations: " . " Login : ".$login." Mot de passe : Silence is golden "." E-mail : ".$email."  Pseudo : ".$pseudo;
-		wp_mail($to, $subject, $message);
+		//Envoi un email pour l'utilisateur
+		$to_user = $email;
+		$subject_user = 'Confirmation de votre inscription';
+		$message_user = "Merci de vous être inscrit." . "Rappel de vos informations: " . " Login : ".$login." Mot de passe : Silence is golden "." E-mail : ".$email."  Pseudo : ".$pseudo;
+
+		wp_mail($to_user, $subject_user, $message_user);
 	}
 
 	else
 	{
-		echo 'Veuillez refaire la démarche svp, une erreur technique est survenue';
+		echo '<p>Une erreur technique est survenue, veuillez réessaayer dans quelques instants</p>';
 	}

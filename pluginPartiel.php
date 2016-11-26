@@ -18,7 +18,7 @@ function scripts()
 {
     wp_register_style( 'style', plugins_url('css/style.css', __FILE__));
     wp_enqueue_style('style');	
-    wp_enqueue_script('js', plugins_url('js/verif_form.js', __FILE__));
+  wp_enqueue_script('js', plugins_url('js/verif_form.js', __FILE__), array(), '1.0', true);
 }
 
 add_action("wp_enqueue_scripts", "scripts");
@@ -43,6 +43,7 @@ class widget_form_subscribe2 extends WP_widget
 		WP_Widget::__construct("widget-inscription", "Widget d'inscription", $options);
 	}
 
+	//Fonction qui permet l'affichage des données dans la sidebar
 	function widget($args, $instance)
 	{
 		extract($args);
@@ -50,7 +51,7 @@ class widget_form_subscribe2 extends WP_widget
 		echo $before_title . $instance["titre"] . $after_title;
 		?>
 
-		<form method="POST" action="">
+		<form method="POST" action="" id="formsubscribe">
 
 			<label for="<?= $this->get_field_id("login"); ?>">Login: </label>
 			<input type="text" name="login" id="<?= $this->get_field_id("login"); ?>"><br /><br />
@@ -60,28 +61,54 @@ class widget_form_subscribe2 extends WP_widget
 			<input type="email" name="email" id="<?= $this->get_field_id("email"); ?>"><br /><br />
 			<label for="<?= $this->get_field_id("pseudo"); ?>">Pseudo: </label>
 			<input type="text" name="pseudo" id="<?= $this->get_field_id("pseudo"); ?>"><br /><br />
-			<input type="submit" value="S'inscrire">
 
-			<?php 
+			<?php //wp_nonce_field(); ?>
 
-				if(isset($_POST["login"]) && isset($_POST["mdp"]) && isset($_POST["email"]) && isset($_POST["pseudo"]))
-				{
-					require_once(plugin_dir_path(__FILE__)."model/insert_users.php");
-					//add_action("wp", "insert_users");
-				}
-
-				else
-				{
-					echo "<p>Tous les champs doivent être remplis</p>";
-				}
-			?>	
+			<input type="submit" value="S'inscrire" id="submit-form">
 
 		</form>
+
+		<?php 
+
+			var_dump($_POST);
+			/*if(!wp_verify_nonce($_POST['_wpnonce']))
+			{
+				die("Mauvais nonce");
+			}*/	
+
+			if(empty($_POST['login']))
+			{
+				echo "<p>Veuillez renseigner le champs login svp</p>";
+			}
+
+			else if(empty($_POST['mdp']))
+			{
+				echo "<p>Veuillez renseigner le champs mot de passe svp</p>";
+			}	
+
+			else if(empty($_POST['email']))
+			{
+				echo "<p>Veuillez renseigner le champs e-mail svp</p>";
+			}
+
+			else if(empty($_POST['pseudo']))
+			{
+				echo "<p>Veuillez renseigner le champs pseudo svp</p>";
+			}
+
+			else
+			{
+				require_once(plugin_dir_path(__FILE__)."model/insert_users.php");
+				//add_action("wp", "insert_users");					
+				echo "<p>Les données ont été entregistré, vous allez recevoir un mail de confirmation</p>";
+			}										
+		?>			
 
 		<?php
 		echo $after_widget;
 	}
 
+	//Fonction qui permet de sauvegarder les données du widget
 	function update($new, $old)
 	{
 		return $new;

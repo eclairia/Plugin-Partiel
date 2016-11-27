@@ -1,26 +1,26 @@
 document.getElementById("formsubscribe").onsubmit = function(event)
 {
-	if(document.getElementById("widget-widget-inscription-4-login").value == "")
+	if(document.getElementById("widget-widget-subscribe-2-login").value == "")
 	{
 		event.preventDefault();
-		return alert("Veuillez renseigner le champs login svp");
+		return alert("Please, fill the field login");
 	}
 
-	else if(document.getElementById("widget-widget-inscription-4-mdp").value == "")
+	else if(document.getElementById("widget-widget-subscribe-2-password").value == "")
 	{
 		event.preventDefault();
-		return alert("Veuillez renseigner le champs mot de passe svp");
+		return alert("Please, fill the field password");
 	}
 
-	else if(document.getElementById("widget-widget-inscription-4-email").value == "")
+	else if(document.getElementById("widget-widget-subscribe-2-email").value == "")
 	{
 		event.preventDefault();
-		return alert("Veuillez renseigner le champs email svp");
+		return alert("Please, fill the field email");
 	}
 
-	else if(document.getElementById("widget-widget-inscription-4-pseudo").value == "")
+	else if(document.getElementById("widget-widget-subscribe-2-pseudo").value == "")
 	{
 		event.preventDefault();
-		return alert("Veuillez renseigner le champs pseudo svp");
+		return alert("Please, fill the field pseudo");
 	}			
 }

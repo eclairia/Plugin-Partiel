@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr_FR\n"
-"POT-Creation-Date: 2016-11-30 14:00+0100\n"
-"PO-Revision-Date: 2016-11-30 14:01+0100\n"
+"POT-Creation-Date: 2016-12-03 12:22+0100\n"
+"PO-Revision-Date: 2016-12-03 12:22+0100\n"
 "Last-Translator: \n"
 "Language-Team: Adrien Jourdier\n"
 "Language: fr\n"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Please, fill the field login"
 msgstr "Veuillez remplir le champs login s'il vous plait"
 
-#: inc/admin/verif_form.php:16
+#: inc/admin/verif_form.php:16 pluginPartiel.php:36
 msgid "Please, fill the field password"
 msgstr "Veuillez remplir le champs mot de passe s'il vous plait"
 
-#: inc/admin/verif_form.php:21
+#: inc/admin/verif_form.php:21 pluginPartiel.php:37
 msgid "Please, fill the field email"
 msgstr "Veuillez remplir le champs e-mail s'il vous plait"
 
-#: inc/admin/verif_form.php:32
+#: inc/admin/verif_form.php:32 pluginPartiel.php:38
 msgid "Please, fill the field pseudo"
 msgstr "Veuillez remplir le champs pseudonyme s'il vous plait"
 
@@ -44,18 +44,22 @@ msgstr "Un utilisateur a bien été inséré dans la base de données"
 msgid "Technical issue, please, try again"
 msgstr "Un problème technique est apparu, veuillez réessayer dans quelques instants"
 
-#: pluginPartiel.php:77
+#: pluginPartiel.php:80
 msgid "Login:"
 msgstr "Identifiant"
 
-#: pluginPartiel.php:79
+#: pluginPartiel.php:82
 msgid "Password:"
 msgstr "Mot de passe"
 
-#: pluginPartiel.php:81
+#: pluginPartiel.php:84
 msgid "Email:"
 msgstr "E-mail:"
 
-#: pluginPartiel.php:83
+#: pluginPartiel.php:86
 msgid "Pseudo:"
 msgstr "Pseudonyme"
+
+#: pluginPartiel.php:91
+msgid "Subscribe"
+msgstr "S'inscrire"

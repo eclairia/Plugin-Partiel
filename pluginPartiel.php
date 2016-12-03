@@ -88,7 +88,7 @@ class widget_form_subscribe2 extends WP_widget
 
 			<input type="hidden" name="securite_nonce" value="<?php echo wp_create_nonce('securite-nonce'); ?>"/>
 
-			<input type="submit" value="S'inscrire" id="submit-form" name="verif_submit_subscribe_form"><br /><br />
+			<input type="submit" value="<?php _e('Subscribe' , 'wp_langue'); ?>" id="submit-form" name="verif_submit_subscribe_form"><br /><br />
 
 		</form>	
 
